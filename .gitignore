@@ -1,1 +1,21 @@
 venv
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# Virtual env
+venv/
+
+# VSCode
+.vscode/
+
+# Django stuff
+*.pot
+*.pyc
+db.sqlite3
+
+# MacOS / Linux / Windows
+.DS_Store
+Thumbs.db
