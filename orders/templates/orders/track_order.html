@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rastreamento de Encomenda</title>
+</head>
+
+<body>
+    <h1>Rastreamento de Encomenda</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="tracking_code">Código de rastreio:</label>
+        <input type="text" name="tracking_code" id="tracking_code" required>
+        <button type="submit">Consultar</button>
+    </form>
+    {% if order %}
+    <h2>Status da Encomenda</h2>
+    <ul>
+        <li><strong>Código:</strong> {{ order.tracking_code }}</li>
+        <li><strong>Remetente:</strong> {{ order.sender }}</li>
+        <li><strong>Destinatário:</strong> {{ order.recipient }}</li>
+        <li><strong>Endereço:</strong> {{ order.delivery_address }}</li>
+        <li><strong>Peso (kg):</strong> {{ order.weight_kg }}</li>
+        <li><strong>Valor declarado:</strong> R$ {{ order.declared_value }}</li>
+        <li><strong>Status:</strong> {{ order.get_status_display }}</li>
+        <li><strong>Última atualização:</strong> {{ order.updated_at }}</li>
+    </ul>
+    {% elif error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+
+</html>
