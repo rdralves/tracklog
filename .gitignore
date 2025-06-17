@@ -19,3 +19,5 @@ db.sqlite3
 # MacOS / Linux / Windows
 .DS_Store
 Thumbs.db
+__pycache__
+.pyc
