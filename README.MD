@@ -1,9 +1,6 @@
-Com prazer! Aqui está um modelo de README.md profissional e completo para o seu projeto TrackLog, já adaptado para o que você construiu até aqui.
-Sinta-se à vontade para ajustar conforme evoluir o projeto!
-
 # TrackLog
 
-Sistema completo de rastreamento e gestão de encomendas para o setor logístico, desenvolvido em Python com Django.
+Sistema de rastreamento e gestão de encomendas para o setor logístico, desenvolvido em Python com Django.
 
 ## Índice
 
@@ -128,7 +125,13 @@ Principais URLs
 /api/orders/ — API RESTful de encomendas
 Screenshots
 
-Adicione aqui prints das principais telas do sistema para ilustrar o funcionamento.
+Prints das principais telas do sistema.
+
+Home - Onde o usúario pode digitar seu código de rastreio. 
+![alt text](home-1.png)
+
+Area administrativa.
+![area](are)
 
 To-Do e Melhorias Futuras
 Dashboard com gráficos de entregas
@@ -142,10 +145,12 @@ Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
-Desenvolvido por [Seu Nome] — 2024
+Desenvolvido por: Rodrigo Reis | https://github.com/rdralves/tracklog  — 2024
 
 
----
 
-Se quiser um README mais enxuto, com badges, ou com instruções para deploy em produção, só pedir!  
-Se quiser, posso gerar um `requirements.txt` básico também.
+
+
+
+
+[def]: home.png
