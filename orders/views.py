@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 
 
 def home(request):
+    nome = 'teste'
     return render(request, 'orders/home.html')
 
 def track_order(request):
