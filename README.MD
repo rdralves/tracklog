@@ -128,10 +128,10 @@ Screenshots
 Prints das principais telas do sistema.
 
 Home - Onde o usúario pode digitar seu código de rastreio. 
-![alt text](home-1.png)
+![home](home.png)
 
 Area administrativa.
-![area](are)
+![area_administrativa](area_administrativa.png)
 
 To-Do e Melhorias Futuras
 Dashboard com gráficos de entregas
