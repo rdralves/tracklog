@@ -45,7 +45,6 @@ O sistema conta com painel administrativo, CRUD completo fora do admin, API REST
 - Django REST Framework
 - Bootstrap 5 (via CDN)
 - SQLite (padrão, pode ser trocado por PostgreSQL facilmente)
-- Docker (opcional, para deploy)
 - Git (controle de versão por features)
 
 ---
@@ -54,7 +53,7 @@ O sistema conta com painel administrativo, CRUD completo fora do admin, API REST
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/tracklog.git
+   git clone https://github.com/rdralves/tracklog.git
    cd tracklog
    ```
 
@@ -85,6 +84,7 @@ Acesse o sistema:
 Área pública: http://localhost:8000/
 Login: http://localhost:8000/accounts/login/
 Admin: http://localhost:8000/admin/
+Admin 2: http://localhost:8000/encomendas/
 Fluxo de Desenvolvimento por Features
 
 O projeto é desenvolvido em etapas, cada uma em seu próprio branch, seguindo o padrão:
@@ -141,5 +141,3 @@ Licença
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
 Desenvolvido por: Rodrigo Reis | https://github.com/rdralves/tracklog — 2024
-
-[def]: home.png
