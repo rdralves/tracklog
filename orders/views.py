@@ -1,3 +1,4 @@
+from django.views.generic import UpdateView
 from django.views.generic import DetailView
 from django.views.generic import ListView
 from django.shortcuts import render
@@ -45,3 +46,13 @@ class OrderDetailView(LoginRequiredMixin, DetailView):
     model = Order
     template_name = 'orders/order_detail.html'
     context_object_name = 'order'
+
+
+class OrderUpdateView(LoginRequiredMixin, UpdateView):
+    model = Order
+    template_name = 'orders/order_form.html'
+    fields = [
+        'tracking_code', 'sender', 'recipient', 'delivery_address',
+        'weight_kg', 'declared_value', 'status'
+    ]
+    success_url = reverse_lazy('order_list')
