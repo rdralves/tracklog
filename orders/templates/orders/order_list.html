@@ -1,0 +1,36 @@
+{% extends 'orders/base.html' %}
+{% block title %}Minhas Encomendas | TrackLog{% endblock %}
+{% block content %}
+<h2 class="mb-4">Minhas Encomendas</h2>
+<a href="{% url 'order_create' %}" class="btn btn-success mb-3">Nova Encomenda</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Remetente</th>
+            <th>Destinatário</th>
+            <th>Status</th>
+            <th>Última atualização</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.tracking_code }}</td>
+            <td>{{ order.sender }}</td>
+            <td>{{ order.recipient }}</td>
+            <td>{{ order.get_status_display }}</td>
+            <td>{{ order.updated_at|date:"d/m/Y H:i" }}</td>
+            <td>
+                <!-- Links para editar, excluir, detalhes (adicionar nas próximas features) -->
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6" class="text-center">Nenhuma encomenda cadastrada.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

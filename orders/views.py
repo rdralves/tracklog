@@ -1,3 +1,4 @@
+from django.views.generic import ListView
 from django.shortcuts import render
 from .models import Order
 from django.views.generic import CreateView
@@ -27,3 +28,10 @@ class OrderCreateView(LoginRequiredMixin, CreateView):
         'weight_kg', 'declared_value', 'status'
     ]
     success_url = reverse_lazy("order_list")
+    
+
+class OrderListView(LoginRequiredMixin, ListView):
+    model = Order
+    template_name = 'orders/order_list.html'
+    context_object_name = 'orders'
+    ordering = ['-created_at']
