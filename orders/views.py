@@ -1,3 +1,4 @@
+from django.views.generic import DetailView
 from django.views.generic import ListView
 from django.shortcuts import render
 from .models import Order
@@ -38,3 +39,9 @@ class OrderListView(LoginRequiredMixin, ListView):
     template_name = 'orders/order_list.html'
     context_object_name = 'orders'
     ordering = ['-created_at']
+
+
+class OrderDetailView(LoginRequiredMixin, DetailView):
+    model = Order
+    template_name = 'orders/order_detail.html'
+    context_object_name = 'order'

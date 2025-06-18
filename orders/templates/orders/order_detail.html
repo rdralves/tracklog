@@ -1,0 +1,16 @@
+{% extends 'orders/base.html' %}
+{% block title %}Detalhes da Encomenda | TrackLog{% endblock %}
+{% block content %}
+<h2 class="mb-4">Detalhes da Encomenda</h2>
+<ul class="list-group mb-3">
+    <li class="list-group-item"><strong>Código:</strong> {{ order.tracking_code }}</li>
+    <li class="list-group-item"><strong>Remetente:</strong> {{ order.sender }}</li>
+    <li class="list-group-item"><strong>Destinatário:</strong> {{ order.recipient }}</li>
+    <li class="list-group-item"><strong>Endereço:</strong> {{ order.delivery_address }}</li>
+    <li class="list-group-item"><strong>Peso (kg):</strong> {{ order.weight_kg }}</li>
+    <li class="list-group-item"><strong>Valor declarado:</strong> R$ {{ order.declared_value }}</li>
+    <li class="list-group-item"><strong>Status:</strong> {{ order.get_status_display }}</li>
+    <li class="list-group-item"><strong>Última atualização:</strong> {{ order.updated_at|date:"d/m/Y H:i" }}</li>
+</ul>
+<a href="{% url 'order_list' %}" class="btn btn-secondary">Voltar</a>
+{% endblock %}
