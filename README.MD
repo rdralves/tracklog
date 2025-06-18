@@ -56,34 +56,29 @@ O sistema conta com painel administrativo, CRUD completo fora do admin, API REST
    ```bash
    git clone https://github.com/seu-usuario/tracklog.git
    cd tracklog
-
+   ```
 
 Crie e ative o ambiente virtual:
 
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
-
+source venv/bin/activate # Linux/Mac
+venv\Scripts\activate # Windows
 
 Instale as dependências:
 
 pip install -r requirements.txt
 
-
 Aplique as migrações:
 
 python manage.py migrate
-
 
 Crie um superusuário:
 
 python manage.py createsuperuser
 
-
 Rode o servidor:
 
 python manage.py runserver
-
 
 Acesse o sistema:
 
@@ -127,11 +122,11 @@ Screenshots
 
 Prints das principais telas do sistema.
 
-Home - Onde o usúario pode digitar seu código de rastreio. 
-![home](home.png)
+Home - Onde o usúario pode digitar seu código de rastreio.
+![home.png](home.png)
 
 Area administrativa.
-![area_administrativa](area_administrativa.png)
+![area_administrativa.png](area_administrativa.png)
 
 To-Do e Melhorias Futuras
 Dashboard com gráficos de entregas
@@ -145,12 +140,6 @@ Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
-Desenvolvido por: Rodrigo Reis | https://github.com/rdralves/tracklog  — 2024
-
-
-
-
-
-
+Desenvolvido por: Rodrigo Reis | https://github.com/rdralves/tracklog — 2024
 
 [def]: home.png
