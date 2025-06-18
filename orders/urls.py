@@ -1,5 +1,7 @@
 from django.urls import path
 from .views import OrderCreateView, OrderDeleteView, OrderDetailView, OrderListView, OrderUpdateView, track_order, home
+from django.contrib.auth.views import LogoutView
+
 
 urlpatterns = [
     path('rastrear/', track_order, name='track_order'),
@@ -11,4 +13,6 @@ urlpatterns = [
          OrderUpdateView.as_view(), name='order_update'),
     path('encomendas/<int:pk>/excluir/',
          OrderDeleteView.as_view(), name='order_delete'),
+    path('logout/', LogoutView.as_view(next_page='home'), name='logout'),
+    
 ]

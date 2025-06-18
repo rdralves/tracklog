@@ -15,7 +15,10 @@
             <nav class="d-flex justify-content-between align-items-center">
                 <div>
                     <a href="{% url 'home' %}" class="text-white text-decoration-none me-3">Início</a>
-                    <a href="{% url 'track_order' %}" class="text-white text-decoration-none">Rastrear Encomenda</a>
+                    <a href="{% url 'track_order' %}" class="text-white text-decoration-none">Rastrear Encomenda   |   </a>
+                    {% if user.is_authenticated %}
+                    <a class="text-white text-decoration-none " href="/encomendas/" >  Área Administrativa</a>
+                    {% endif %}
                 </div>
                 <h1 class="h4 m-0">TrackLog</h1>
             </nav>

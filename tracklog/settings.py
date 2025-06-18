@@ -125,3 +125,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'noreply@tracklog.com'
+LOGIN_REDIRECT_URL = '/encomendas/'
+LOGOUT_URL = '/logout/'
