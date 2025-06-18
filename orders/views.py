@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from .models import Order
+from django.shortcuts import render
 
+
+def home(request):
+    return render(request, 'orders/home.html')
 
 def track_order(request):
     contex = {}

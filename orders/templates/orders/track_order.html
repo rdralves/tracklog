@@ -1,33 +1,37 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Rastreamento de Encomenda</title>
-</head>
-
-<body>
-    <h1>Rastreamento de Encomenda</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label for="tracking_code">Código de rastreio:</label>
-        <input type="text" name="tracking_code" id="tracking_code" required>
-        <button type="submit">Consultar</button>
-    </form>
-    {% if order %}
-    <h2>Status da Encomenda</h2>
-    <ul>
-        <li><strong>Código:</strong> {{ order.tracking_code }}</li>
-        <li><strong>Remetente:</strong> {{ order.sender }}</li>
-        <li><strong>Destinatário:</strong> {{ order.recipient }}</li>
-        <li><strong>Endereço:</strong> {{ order.delivery_address }}</li>
-        <li><strong>Peso (kg):</strong> {{ order.weight_kg }}</li>
-        <li><strong>Valor declarado:</strong> R$ {{ order.declared_value }}</li>
-        <li><strong>Status:</strong> {{ order.get_status_display }}</li>
-        <li><strong>Última atualização:</strong> {{ order.updated_at }}</li>
-    </ul>
-    {% elif error %}
-    <p style="color: red;">{{ error }}</p>
-    {% endif %}
-</body>
-
-</html>
+{% extends 'orders/base.html' %}
+{% block title %}Rastreamento de Encomenda | TrackLog{% endblock %}
+{% block content %}
+<div class="card shadow-sm my-5">
+    <div class="card-body">
+        <h2 class="card-title mb-4">Rastreamento de Encomenda</h2>
+        <form method="post" class="mb-4">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="tracking_code" class="form-label">Código de rastreio:</label>
+                <input type="text" name="tracking_code" id="tracking_code" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Consultar</button>
+        </form>
+        {% if order %}
+        <div class="alert alert-success">
+            <h5>Status da Encomenda</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Código:</strong> {{ order.tracking_code }}</li>
+                <li class="list-group-item"><strong>Remetente:</strong> {{ order.sender }}</li>
+                <li class="list-group-item"><strong>Destinatário:</strong> {{ order.recipient }}</li>
+                <li class="list-group-item"><strong>Endereço:</strong> {{ order.delivery_address }}</li>
+                <li class="list-group-item"><strong>Peso (kg):</strong> {{ order.weight_kg }}</li>
+                <li class="list-group-item"><strong>Valor declarado:</strong> R$ {{ order.declared_value }}</li>
+                <li class="list-group-item"><strong>Status:</strong> {{ order.get_status_display }}</li>
+                <li class="list-group-item"><strong>Última atualização:</strong> {{ order.updated_at|date:"d/m/Y H:i" }}
+                </li>
+            </ul>
+        </div>
+        {% elif error %}
+        <div class="alert alert-danger">
+            {{ error }}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
