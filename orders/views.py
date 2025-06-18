@@ -1,3 +1,4 @@
+from django.views.generic import DeleteView
 from django.views.generic import UpdateView
 from django.views.generic import DetailView
 from django.views.generic import ListView
@@ -55,4 +56,10 @@ class OrderUpdateView(LoginRequiredMixin, UpdateView):
         'tracking_code', 'sender', 'recipient', 'delivery_address',
         'weight_kg', 'declared_value', 'status'
     ]
+    success_url = reverse_lazy('order_list')
+
+
+class OrderDeleteView(LoginRequiredMixin, DeleteView):
+    model = Order
+    template_name = 'orders/order_confirm_delete.html'
     success_url = reverse_lazy('order_list')

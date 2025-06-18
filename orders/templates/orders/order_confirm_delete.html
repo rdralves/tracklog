@@ -1,0 +1,11 @@
+{% extends 'orders/base.html' %}
+{% block title %}Excluir Encomenda | TrackLog{% endblock %}
+{% block content %}
+<h2 class="mb-4">Excluir Encomenda</h2>
+<p>Tem certeza que deseja excluir a encomenda <strong>{{ object.tracking_code }}</strong>?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sim, excluir</button>
+    <a href="{% url 'order_list' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
